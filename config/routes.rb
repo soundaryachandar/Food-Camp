@@ -1,4 +1,12 @@
 FoodCamp::Application.routes.draw do
+  get "food_listing/show"
+
+  get "food_type/upload"
+
+  get "food_type/show"
+
+  post "food_type/upload" => 'food_type#upload_file'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -12,6 +20,7 @@ FoodCamp::Application.routes.draw do
 
   # Sample resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
+  #resources :food_type
 
   # Sample resource route with options:
   #   resources :products do
@@ -55,4 +64,6 @@ FoodCamp::Application.routes.draw do
   # This is a legacy wild controller route that's not recommended for RESTful applications.
   # Note: This route will make all actions in every controller accessible via GET requests.
   # match ':controller(/:action(/:id(.:format)))'
+  
+  match '/upload', :to => 'food_type#upload'
 end

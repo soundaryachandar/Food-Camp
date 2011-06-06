@@ -1,0 +1,16 @@
+class CreateFoodTypes < ActiveRecord::Migration
+  def self.up
+    create_table :food_types do |t|
+      t.string :type
+      t.string :name
+      t.string :location
+      t.string :city
+
+      t.timestamps
+    end
+  end
+
+  def self.down
+    drop_table :food_types
+  end
+end

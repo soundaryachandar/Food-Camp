@@ -1,0 +1,10 @@
+<html>
+  <title>File Upload</title>
+<body>
+<h1> Select a File to Upload </h1>
+<%= form_for :upload,:html => {:multipart => true } do |f| %>
+<%= f.file_field :food_type %>
+    <%= f.submit "Upload",:disable_with => 'Uploading...' %>
+<% end -%>
+</body>
+  </html>

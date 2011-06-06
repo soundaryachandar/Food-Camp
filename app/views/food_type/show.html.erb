@@ -1,0 +1,14 @@
+<table class="FoodTypes">
+          <tr>
+           <%= @food_type.each do |f| %>
+<td><%= f.foodkind %></td>
+<br />
+ <td> <%= f.name %></td>
+<br />
+<td><%= f.location %></td>
+<br />
+ <td> <%= f.city %></td>
+      <br />
+</tr>
+      <% end %>
+</table>
