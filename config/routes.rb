@@ -1,9 +1,8 @@
 FoodCamp::Application.routes.draw do
-  get "food_listing/show"
 
   get "food_type/upload"
 
-  get "food_type/show"
+  get "food_type/index"
 
   post "food_type/upload" => 'food_type#upload_file'
 
@@ -57,7 +56,7 @@ FoodCamp::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "food_type#home"
 
   # See how all your routes lay out with "rake routes"
 

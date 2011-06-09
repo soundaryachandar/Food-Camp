@@ -6,16 +6,23 @@ class FoodTypeController < ApplicationController
   end
 
   def upload_file
-    @csv_file = CSV.read(params[:upload][:food_type])
-    @headers = @csv_file.shift
-    @csv_file.each do |row|
-      FoodType.create!(:foodkind => row[0],:name => row[1],:location => row[2],:city => row[3])
+    @file_object = params[:upload][:food_type]
+    @csv_contents = CSV.read(@file_object)
+     @csv_contents.each do |row|
+      FoodType.create!(:foodkind => row[0],:name => row[1],:location => row[2],:city => row[3], :tag_list => row[0])
     end
-    @food_type = FoodType.find(:all)
-    render 'show'
+    redirect_to food_type_index_path
   end
 
-  def show
-    @food_type = FoodType.find(:all)
+  def index
+    @food_types = FoodType.all
+
+    respond_to do |format|
+      format.html
+    end
+  end
+
+  def home
+    @title = "Home"
   end
 end

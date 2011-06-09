@@ -8,6 +8,7 @@ gem 'rails', '3.0.1'
 gem 'mysql2'
 
 gem 'rake', '0.8.7'
+gem 'acts-as-taggable-on'
 # Use unicorn as the web server
 # gem 'unicorn'
 
