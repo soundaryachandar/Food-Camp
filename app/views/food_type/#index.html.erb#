@@ -1,4 +1,4 @@
-File name<%=@file_object_name %>
+File name<%= @file_object %>
 <table class="FoodTypes">
            <tr>
            <% @food_types.each do |f| %>
